@@ -66,7 +66,12 @@ void MemoryPool<T>::destroy()
     while (atual != nullptr)
     {
         MemoryPool<T>* temp = atual->next;
-        delete atual->Memblock;
+
+        if (atual->Memblock) {
+            delete atual->Memblock;
+            atual->Memblock = nullptr;  
+        }
+
         delete atual;
         atual = temp;
     }

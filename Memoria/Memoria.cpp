@@ -55,8 +55,9 @@ int main()
     cout << duration_cast<milliseconds>(end - start).count() << " Milliseconds" << '\n';
     
 
+	
 
-
+	MemoryPool<int>::destroy();
     
     
 }
